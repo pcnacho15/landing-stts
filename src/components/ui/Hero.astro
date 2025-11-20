@@ -1,0 +1,85 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section
+  id="inicio"
+  class="relative py-20 lg:py-32"
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center animate-zoom-in">
+      <h1
+        class="text-4xl md:text-6xl font-bold text-primary mb-6 tracking-wide"
+      >
+        Protegemos tu empresa con <span
+          class="bg-gradient-to-r from-[#0B4791] to-[#69B4BB] text-transparent bg-clip-text"
+        >
+          Seguridad y Salud
+        </span>
+        en el Trabajo
+      </h1>
+      <p
+        class="text-xl text-muted-foreground mb-8 text-pretty max-w-2xl mx-auto"
+      >
+        Somos expertos en SST con más de 10 años de experiencia. Ofrecemos
+        soluciones integrales para mantener a tus trabajadores seguros y tu
+        empresa en cumplimiento normativo.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <a
+          href="https://wa.link/p8ajyx"
+          type="button"
+          class="group flex gap-2 items-center justify-center bg-gradient-to-r from-[#0B4791] to-[#69B4BB] hover:from-[#0B4791]/90 hover:to-[#69B4BB]/90 text-accent-foreground text-sm font-medium rounded-md px-4 py-3 cursor-pointer shadow-lg shadow-[#69B4BB] active:shadow-md active:scale-95 transition-transform tracking-wide"
+        >
+          Solicitar Consulta Gratuita
+          <Icon
+            name="arrow-right"
+            size="20"
+            class="transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:rotate-6"
+          />
+        </a>
+        <button
+          type="button"
+          class="bg-transparent hover:bg-gray-200/90 text-sm font-medium text-black rounded-md px-4 py-3 cursor-pointer shadow-xl/20 active:shadow-xl active:scale-95 transition-transform duration-300 ease-out border border-gray-300 tracking-wide"
+        >
+          Ver Nuestros Servicios
+        </button>
+      </div>
+
+      {/* Trust Indicators */}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+        <div class="flex items-center justify-center space-x-2">
+          <!-- <CheckCircle class="h-5 w-5 text-chart-1" /> -->
+          <Icon
+            name="check-circle"
+            size="25"
+          />
+          <span class="text-sm text-muted-foreground"
+            >+500 Empresas Atendidas</span
+          >
+        </div>
+        <div class="flex items-center justify-center space-x-2">
+          <!-- <CheckCircle class="h-5 w-5 text-chart-1" /> -->
+          <Icon
+            name="check-circle"
+            size="25"
+          />
+          <span class="text-sm text-muted-foreground"
+            >Certificación ISO 45001</span
+          >
+        </div>
+        <div class="flex items-center justify-center space-x-2">
+          <!-- <CheckCircle class="h-5 w-5 text-chart-1" /> -->
+          <Icon
+            name="check-circle"
+            size="25"
+          />
+          <span class="text-sm text-muted-foreground"
+            >10+ Años de Experiencia</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

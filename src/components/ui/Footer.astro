@@ -1,0 +1,114 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import logo from "../../assets/logo-completo.png";
+---
+
+<footer class="bg-primary text-primary-foreground">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      {/* Company Info */}
+      <div class="col-span-1 md:col-span-2">
+        <div class="flex items-center space-x-2 mb-4">
+          <!-- <Shield class="h-8 w-8 text-accent" /> -->
+          <!-- <span class="text-2xl font-bold">SST360</span> -->
+          <Image
+            src={logo}
+            alt="Logo SST360"
+            width="80"
+          />
+        </div>
+        <p class="text-primary-foreground/80 mb-4 text-pretty">
+          Expertos en Seguridad y Salud en el Trabajo con más de 10 años de
+          experiencia. <br> Protegemos a tu empresa y trabajadores con soluciones
+          integrales en SST.
+        </p>
+        <div class="space-y-2">
+          <div class="flex items-center space-x-2">
+            <!-- <Phone class="h-4 w-4" /> -->
+            <Icon
+              name="phone"
+              size="20"
+            />
+            <span class="text-sm">+57 (1) 234-5678</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <!-- <Mail class="h-4 w-4" /> -->
+            <Icon
+              name="mail"
+              size="20"
+            />
+            <span class="text-sm">info@sst360.com</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <!-- <MapPin class="h-4 w-4" /> -->
+            <Icon
+              name="map-pin"
+              size="20"
+            />
+            <span class="text-sm">Medellín, Colombia</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Services */}
+      <div>
+        <h3 class="font-semibold mb-4">Servicios</h3>
+        <ul class="space-y-2 text-sm text-primary-foreground/80">
+          <li>Trabajos de Alto Riesgo</li>
+          <li>Trabajo en Alturas</li>
+          <li>Trabajos Eléctricos</li>
+          <li>Diseño SG-SST</li>
+          <li>Capacitaciones SST</li>
+          <li>Día de la Salud</li>
+        </ul>
+      </div>
+
+      {/* Company */}
+      <div>
+        <h3 class="font-semibold mb-4">Empresa</h3>
+        <ul class="space-y-2 text-sm text-primary-foreground/80">
+          <li>
+            <a
+              href="#nosotros"
+              class="hover:text-accent transition-colors"
+            >
+              Nosotros
+            </a>
+          </li>
+          <li>
+            <a
+              href="#servicios"
+              class="hover:text-accent transition-colors"
+            >
+              Servicios
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contacto"
+              class="hover:text-accent transition-colors"
+            >
+              Contacto
+            </a>
+          </li>
+          <li>
+            <a
+              href="/politica-privacidad"
+              class="hover:text-accent transition-colors"
+            >
+              Política de Privacidad
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
+      <p class="text-sm text-primary-foreground/60">
+        © 2025 SST360. Todos los derechos reservados. | Seguridad y Salud en el
+        Trabajo
+      </p>
+    </div>
+  </div>
+</footer>

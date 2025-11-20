@@ -1,0 +1,97 @@
+---
+import { Icon } from "astro-icon/components";
+
+const stats = [
+  {
+    icon: "users",
+    number: "500+",
+    label: "Empresas Atendidas",
+    description:
+      "Hemos trabajado con más de 500 empresas de diferentes sectores",
+  },
+  {
+    icon: "award",
+    number: "10+",
+    label: "Años de Experiencia",
+    description: "Una década de experiencia en el sector de SST",
+  },
+  {
+    icon: "target",
+    number: "99%",
+    label: "Cumplimiento Normativo",
+    description:
+      "Nuestros clientes logran el cumplimiento total de la normativa",
+  },
+  {
+    icon: "trending-up",
+    number: "85%",
+    label: "Reducción de Accidentes",
+    description:
+      "Promedio de reducción de accidentes laborales en nuestros clientes",
+  },
+];
+---
+
+<section
+  id="nosotros"
+  class="py-20"
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-primary mb-4 text-balance"
+        >
+          ¿Por qué elegir SST360?
+        </h2>
+        <p class="text-xl text-muted-foreground text-pretty">
+          Somos líderes en Seguridad y Salud en el Trabajo, comprometidos con la
+          protección de los trabajadores y el cumplimiento normativo de las
+          empresas.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        {
+          stats.map((stat, index) => {
+            return (
+              <div class="border rounded-xl h-full hover:shadow-lg transition-shadow duration-300 p-6 bg-gray-100 animate-zoom-in text-center">
+                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Icon
+                    name={stat.icon}
+                    size="25"
+                    class="text-accent"
+                  />
+                </div>
+                <div class="text-3xl font-bold text-primary mb-2">
+                  {stat.number}
+                </div>
+                <div class="font-semibold text-foreground mb-2">
+                  {stat.label}
+                </div>
+                <p class="text-sm text-muted-foreground text-pretty">
+                  {stat.description}
+                </p>
+              </div>
+            );
+          })
+        }
+      </div>
+
+      <div class="bg-muted/50 rounded-lg p-8">
+        <h3 class="text-2xl font-bold text-primary mb-6 text-center">
+          Nuestra Misión
+        </h3>
+        <p
+          class="text-lg text-muted-foreground text-center text-pretty max-w-3xl mx-auto"
+        >
+          En SST360 nos dedicamos a crear ambientes de trabajo seguros y
+          saludables, proporcionando soluciones integrales en Seguridad y Salud
+          en el Trabajo que protejan a los trabajadores y garanticen el
+          cumplimiento normativo de las empresas, contribuyendo así al
+          desarrollo sostenible y responsable del sector productivo.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

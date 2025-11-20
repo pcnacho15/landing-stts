@@ -1,0 +1,61 @@
+---
+const partners = [
+  { name: "Ecopetrol", logo: "/ecopetrol-logo.jpg" },
+  { name: "Grupo Argos", logo: "/grupo-argos-logo.jpg" },
+  { name: "ISA", logo: "/isa-logo.jpg" },
+  { name: "Cerrejón", logo: "/cerrejon-logo.jpg" },
+  { name: "Drummond", logo: "/drummond-logo.jpg" },
+  { name: "Glencore", logo: "/glencore-logo.jpg" },
+  { name: "Pacific Rubiales", logo: "/pacific-rubiales-logo.jpg" },
+  { name: "Canacol Energy", logo: "/canacol-energy-logo.jpg" },
+];
+---
+
+<section class="py-16">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-primary mb-4">
+        Nuestros Aliados Estratégicos
+      </h2>
+      <p class="text-muted-foreground max-w-2xl mx-auto">
+        Hemos trabajado con las empresas más importantes del sector industrial
+        colombiano, brindando soluciones de SST de la más alta calidad.
+      </p>
+    </div>
+
+    <div class="overflow-hidden max-w-5xl mx-auto">
+      <div class="flex whitespace-nowrap animate-infinite-scroll-left space-x-4">
+        {/* Logos duplicados para crear efecto infinito */}
+        {
+          [...partners, ...partners].map((partner) => (
+            <img
+              src={partner.logo}
+              alt={`Logo de ${partner.name}`}
+              class="h-24 w-auto mx-8 object-contain filter transition-all duration-300"
+            />
+          ))
+        }
+      </div>
+
+      {/* Indicators */}
+      {
+        /* <div class="flex justify-center mt-8 space-x-2">
+              {Array.from({ length: Math.ceil(partners.length / 4) }).map(
+                (_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    class={`w-3 h-3 rounded-full transition-colors duration-200 ${
+                      index === currentIndex
+                        ? "bg-accent"
+                        : "bg-muted-foreground/30"
+                    }`}
+                    aria-label={`Ir a slide ${index + 1}`}
+                  />
+                )
+              )}
+            </div> */
+      }
+    </div>
+  </div>
+</section>

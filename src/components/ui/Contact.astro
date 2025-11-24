@@ -1,4 +1,237 @@
 ---
-
-
+import { Icon } from "astro-icon/components";
+import { MotionWrapper } from "./MotionWrapper";
 ---
+
+<section
+  id="contacto"
+  class="relative py-20 lg:py-32 overflow-hidden"
+>
+  <!-- Background Elements -->
+  <div class="absolute inset-0 -z-10">
+    <div
+      class="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-b from-[#0B4791]/10 to-transparent rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-t from-[#69B4BB]/10 to-transparent rounded-full blur-3xl"
+    >
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+      <!-- Left Column: Contact Info -->
+      <MotionWrapper
+        client:visible
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <div class="space-y-8">
+          <div>
+            <h2
+              class="text-3xl md:text-4xl font-bold text-primary mb-4 tracking-tight"
+            >
+              Hablemos de tu <span
+                class="bg-gradient-to-r from-[#0B4791] to-[#69B4BB] text-transparent bg-clip-text"
+              >
+                Seguridad
+              </span>
+            </h2>
+            <p class="text-lg text-muted-foreground text-pretty">
+              Estamos listos para ayudarte a transformar la seguridad y salud en
+              tu empresa. Contáctanos para una asesoría personalizada.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <!-- Email -->
+            <div class="flex items-start gap-4 group">
+              <div
+                class="p-3 rounded-lg bg-primary/5 text-primary group-hover:bg-gradient-to-r group-hover:from-[#0B4791] group-hover:to-[#69B4BB] group-hover:text-white transition-all duration-300 shadow-sm"
+              >
+                <Icon
+                  name="mail"
+                  size="24"
+                />
+              </div>
+              <div>
+                <h3 class="font-medium text-foreground">Correo Electrónico</h3>
+                <a
+                  href="mailto:contacto@stts360.com"
+                  class="text-muted-foreground hover:text-[#0B4791] transition-colors"
+                >
+                  asesoriasvg.sst@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="flex items-start gap-4 group">
+              <div
+                class="p-3 rounded-lg bg-primary/5 text-primary group-hover:bg-gradient-to-r group-hover:from-[#0B4791] group-hover:to-[#69B4BB] group-hover:text-white transition-all duration-300 shadow-sm"
+              >
+                <Icon
+                  name="phone"
+                  size="24"
+                />
+              </div>
+              <div>
+                <h3 class="font-medium text-foreground">Teléfono</h3>
+                <a
+                  href="tel:+51999999999"
+                  class="text-muted-foreground hover:text-[#0B4791] transition-colors"
+                >
+                  +57 3146816353
+                </a>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="flex items-start gap-4 group">
+              <div
+                class="p-3 rounded-lg bg-primary/5 text-primary group-hover:bg-gradient-to-r group-hover:from-[#0B4791] group-hover:to-[#69B4BB] group-hover:text-white transition-all duration-300 shadow-sm"
+              >
+                <Icon
+                  name="map-pin"
+                  size="24"
+                />
+              </div>
+              <div>
+                <h3 class="font-medium text-foreground">Ubicación</h3>
+                <p class="text-muted-foreground">Medellín - Antioquia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </MotionWrapper>
+
+      <!-- Right Column: Form -->
+      <MotionWrapper
+        client:visible
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+      >
+        <div
+          class="bg-card rounded-2xl p-8 shadow-xl shadow-black/5 border border-border/50 backdrop-blur-sm relative overflow-hidden"
+        >
+          <!-- Decorative top border -->
+          <div
+            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#0B4791] to-[#69B4BB]"
+          >
+          </div>
+
+          <form class="space-y-6">
+            <div class="grid sm:grid-cols-2 gap-6">
+              <!-- Name -->
+              <div class="space-y-2">
+                <label
+                  for="name"
+                  class="text-sm font-medium text-foreground/80 ml-1"
+                  >Nombre Completo</label
+                >
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Juan Pérez"
+                    class="w-full pl-10 pr-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-[#69B4BB]/50 focus:border-[#69B4BB] outline-none transition-all placeholder:text-muted-foreground/50"
+                    required
+                  />
+                  <Icon
+                    name="user"
+                    class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5"
+                  />
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="space-y-2">
+                <label
+                  for="email"
+                  class="text-sm font-medium text-foreground/80 ml-1"
+                  >Correo Electrónico</label
+                >
+                <div class="relative">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="juan@empresa.com"
+                    class="w-full pl-10 pr-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-[#69B4BB]/50 focus:border-[#69B4BB] outline-none transition-all placeholder:text-muted-foreground/50"
+                    required
+                  />
+                  <Icon
+                    name="mail"
+                    class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="space-y-2">
+              <label
+                for="message"
+                class="text-sm font-medium text-foreground/80 ml-1"
+                >Teléfono / WhatsApp</label
+              >
+              <div class="relative">
+                <input
+                  type="number"
+                  id="phone"
+                  name="phone"
+                  placeholder="+57 000 000 0000"
+                  class="w-full pl-10 pr-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-[#69B4BB]/50 focus:border-[#69B4BB] outline-none transition-all placeholder:text-muted-foreground/50"
+                  required
+                />
+                <Icon
+                  name="phone"
+                  class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5"
+                />
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="space-y-2">
+              <label
+                for="message"
+                class="text-sm font-medium text-foreground/80 ml-1"
+                >Mensaje</label
+              >
+              <div class="relative">
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="¿En qué podemos ayudarte?"
+                  class="w-full pl-10 pr-4 py-3 bg-background border border-input rounded-lg focus:ring-2 focus:ring-[#69B4BB]/50 focus:border-[#69B4BB] outline-none transition-all placeholder:text-muted-foreground/50 resize-none"
+                  required
+                ></textarea>
+                <Icon
+                  name="message-square"
+                  class="absolute left-3 top-4 text-muted-foreground w-5 h-5"
+                />
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+              type="button"
+              class="w-full group flex items-center justify-center gap-2 bg-gradient-to-r from-[#0B4791] to-[#69B4BB] hover:from-[#0B4791]/90 hover:to-[#69B4BB]/90 text-white font-medium py-3.5 rounded-lg shadow-lg shadow-[#69B4BB]/25 active:scale-[0.98] transition-all duration-300 cursor-pointer"
+            >
+              Enviar Mensaje
+              <Icon
+                name="send"
+                class="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+              />
+            </button>
+          </form>
+        </div>
+      </MotionWrapper>
+    </div>
+  </div>
+</section>

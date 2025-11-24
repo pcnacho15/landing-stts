@@ -1,7 +1,7 @@
 import { column, defineDb, defineTable } from 'astro:db';
 
 
-const Contact = defineTable({
+export const Contact = defineTable({
   columns: {
     id: column.number({  primaryKey: true, autoIncrement: true }),
     nombre: column.text(),

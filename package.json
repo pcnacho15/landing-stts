@@ -9,8 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/db": "^0.18.1",
-    "@astrojs/react": "^4.4.0",
+    "@astrojs/db": "^0.18.3",
+    "@astrojs/react": "^4.4.2",
     "@fontsource-variable/geist-mono": "^5.2.7",
     "@fontsource/geist-sans": "^5.2.5",
     "@midudev/tailwind-animations": "^0.2.0",
@@ -18,10 +18,11 @@
     "@tailwindcss/vite": "^4.1.12",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
-    "astro": "^5.14.4",
+    "astro": "^5.16.0",
     "astro-icon": "^1.1.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.23.24",
     "lucide-react": "^0.542.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { MotionWrapper } from "./MotionWrapper";
 
 const services = [
   {
@@ -39,7 +40,7 @@ const services = [
     icon: "file",
     title: "Diseño e Implementación SG-SST",
     description:
-      "Desarrollo completo del Sistema de Gestión de Seguridad y Salud en el Trabajo.",
+      "Elaboramos el SG-SST con base a los estándares mínimos establecidos por la resolución 0312 de 2019.",
     features: [
       "Diagnóstico inicial",
       "Documentación completa",
@@ -73,24 +74,43 @@ const services = [
 
 <section
   id="servicios"
-  class="py-20 bg-muted/30"
+  class="py-20"
 >
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
+    <MotionWrapper
+      client:visible
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-16"
+    >
       <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 text-balance">
         Nuestros Servicios Especializados
       </h2>
       <p class="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-        Ofrecemos soluciones integrales en Seguridad y Salud en el Trabajo,
-        adaptadas a las necesidades específicas de tu empresa.
+        Somos especialistas en la gestión integral de <span
+          class="bg-gradient-to-r from-[#0B4791] to-[#3d7a80] text-transparent bg-clip-text"
+        >
+          Seguridad y Salud en el Trabajo</span
+        >, promoviendo ambientes laborales seguros, saludables y alineados con
+        las exigencias legales vigentes. Operamos en Medellín y Antioquia,
+        brindando soluciones a empresas de todos los sectores y tamaños, con
+        asesoría directa de profesionales certificados.
       </p>
-    </div>
+    </MotionWrapper>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
       {
         services.map((service, index) => {
           return (
-            <div class="border rounded-xl h-full hover:shadow-lg transition-shadow duration-300 p-6 bg-gray-100 animate-zoom-in">
+            <MotionWrapper
+              client:visible
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="border rounded-xl h-full hover:shadow-lg transition-shadow duration-300 p-6 bg-gray-100 cursor-default"
+            >
               <div>
                 <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
                   <Icon
@@ -116,15 +136,16 @@ const services = [
                   ))}
                 </ul>
               </div>
-            </div>
+            </MotionWrapper>
           );
         })
       }
     </div>
 
     <div class="text-center">
-      <button
-        type="button"
+      <a
+        href="https://wa.link/7d7t3e"
+        target="_blank"
         class="group inline-flex gap-2 items-center justify-center bg-gradient-to-r from-[#0B4791] to-[#69B4BB] hover:from-[#0B4791]/90 hover:to-[#69B4BB]/90 text-accent-foreground text-sm font-medium rounded-md px-4 py-3 cursor-pointer active:scale-95 transition-transform tracking-wide"
       >
         Solicitar Más Información
@@ -133,7 +154,7 @@ const services = [
           size="20"
           class="transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:rotate-6"
         />
-      </button>
+      </a>
     </div>
   </div>
 </section>

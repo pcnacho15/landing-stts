@@ -54,12 +54,13 @@ const links = [
 
       <!-- CTA Button -->
       <div class="hidden md:flex gap-4">
-        <button
-          type="button"
+        <a
+          href="https://wa.link/7d7t3e"
+          target="_blank"
           class="bg-gradient-to-r from-[#0B4791] to-[#69B4BB] hover:from-[#0B4791]/90 hover:to-[#69B4BB]/90 text-accent-foreground text-sm tracking-wide rounded-md px-3.5 py-2 cursor-pointer active:scale-95 transition-transform"
         >
           Solicitar Cotización
-        </button>
+        </a>
       </div>
 
       <!-- Menú móvil React -->
@@ -104,18 +105,21 @@ const links = [
           Inicio
         </a> -->
         <a
+          id="mobile-menu-close-button"
           href="#servicios"
           class="text-foreground hover:text-[#202F58] transition-all transform hover:translate-x-2 duration-200"
         >
           Servicios
         </a>
         <a
+          id="mobile-menu-close-button"
           href="#nosotros"
           class="text-foreground hover:text-[#202F58] transition-all transform hover:translate-x-2 duration-200"
         >
           Nosotros
         </a>
         <a
+          id="mobile-menu-close-button"
           href="#contacto"
           class="text-foreground hover:text-[#202F58] transition-all transform hover:translate-x-2 duration-200"
         >
@@ -127,12 +131,13 @@ const links = [
           Solicitar Cotización
         </Button> -->
 
-        <button
-          type="button"
+        <a
+          href="https://wa.link/7d7t3e"
+          target="_blank"
           class="bg-gradient-to-r from-[#0B4791] to-[#69B4BB] hover:from-[#0B4791]/90 hover:to-[#69B4BB]/90 text-accent-foreground text-sm tracking-wide rounded-md px-3.5 py-3 cursor-pointer active:scale-95 transition-transform"
         >
           Solicitar Cotización
-        </button>
+        </a>
       </nav>
     </div>
   </div>
@@ -142,6 +147,7 @@ const links = [
   const buttonCloseMenu = document.getElementById("mobile-menu-close-button");
   const buttonOpenMenu = document.getElementById("mobile-menu-button");
   const mobileMenu = document.getElementById("mobile-menu");
+  const header = document.querySelector("header");
 
   let isMenuOpen = false;
 
@@ -166,5 +172,16 @@ const links = [
 
   buttonOpenMenu?.addEventListener("click", () => {
     setIsMenuOpen();
+  });
+
+  // Scroll effect
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 20) {
+      header?.classList.add("shadow-md", "bg-background/95");
+      header?.classList.remove("bg-background/60");
+    } else {
+      header?.classList.remove("shadow-md", "bg-background/95");
+      header?.classList.add("bg-background/60");
+    }
   });
 </script>

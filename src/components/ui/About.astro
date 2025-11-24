@@ -1,29 +1,30 @@
 ---
 import { Icon } from "astro-icon/components";
+import { MotionWrapper } from "./MotionWrapper";
 
 const stats = [
   {
-    icon: "users",
+    icon: "thanks",
     number: "500+",
     label: "Empresas Atendidas",
     description:
-      "Hemos trabajado con más de 500 empresas de diferentes sectores",
+      "Hemos trabajado con más de 500 empresas de diferentes sectores del país, brindando soluciones efectivas en SST.",
   },
   {
-    icon: "award",
+    icon: "experience",
     number: "10+",
     label: "Años de Experiencia",
     description: "Una década de experiencia en el sector de SST",
   },
   {
-    icon: "target",
+    icon: "target-3d",
     number: "99%",
     label: "Cumplimiento Normativo",
     description:
       "Nuestros clientes logran el cumplimiento total de la normativa",
   },
   {
-    icon: "trending-up",
+    icon: "trending-3d",
     number: "85%",
     label: "Reducción de Accidentes",
     description:
@@ -38,24 +39,42 @@ const stats = [
 >
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-16">
+      <MotionWrapper
+        client:visible
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
         <h2
           class="text-3xl md:text-4xl font-bold text-primary mb-4 text-balance"
         >
-          ¿Por qué elegir SST360?
+          ¿Por qué elegir <span
+            class="bg-gradient-to-r from-[#0B4791] to-[#69B4BB] text-transparent bg-clip-text"
+            >SST360</span
+          >?
         </h2>
         <p class="text-xl text-muted-foreground text-pretty">
-          Somos líderes en Seguridad y Salud en el Trabajo, comprometidos con la
-          protección de los trabajadores y el cumplimiento normativo de las
-          empresas.
+          Somos líderes en <span
+            class="bg-gradient-to-r from-[#0B4791] to-[#3e8086] text-transparent bg-clip-text"
+            >Seguridad y Salud en el Trabajo</span
+          >, comprometidos con la protección de los trabajadores y el
+          cumplimiento normativo de las empresas.
         </p>
-      </div>
+      </MotionWrapper>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
         {
           stats.map((stat, index) => {
             return (
-              <div class="border rounded-xl h-full hover:shadow-lg transition-shadow duration-300 p-6 bg-gray-100 animate-zoom-in text-center">
+              <MotionWrapper
+                client:visible
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="border rounded-xl h-full hover:shadow-lg transition-shadow duration-300 p-6 bg-gray-100 text-center"
+              >
                 <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Icon
                     name={stat.icon}
@@ -72,26 +91,128 @@ const stats = [
                 <p class="text-sm text-muted-foreground text-pretty">
                   {stat.description}
                 </p>
-              </div>
+              </MotionWrapper>
             );
           })
         }
-      </div>
+      </div> -->
 
-      <div class="bg-muted/50 rounded-lg p-8">
-        <h3 class="text-2xl font-bold text-primary mb-6 text-center">
-          Nuestra Misión
-        </h3>
-        <p
-          class="text-lg text-muted-foreground text-center text-pretty max-w-3xl mx-auto"
+      <MotionWrapper
+        client:visible
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4 }}
+        className="grid grid-cols-1 md:grid-cols-6 gap-4"
+      >
+        <div
+          class="bg-gradient-to-r from-cyan-700 to-cyan-500 md:row-span-5 md:col-span-2 border rounded-xl h-full shadow-lg p-6 cursor-default hover:-translate-y-1 transition-transform duration-300 ease-out"
         >
-          En SST360 nos dedicamos a crear ambientes de trabajo seguros y
-          saludables, proporcionando soluciones integrales en Seguridad y Salud
-          en el Trabajo que protejan a los trabajadores y garanticen el
-          cumplimiento normativo de las empresas, contribuyendo así al
-          desarrollo sostenible y responsable del sector productivo.
-        </p>
-      </div>
+          <div
+            class="text-3xl font-bold bg-gradient-to-r from-gray-50 to-gray-200 bg-clip-text text-transparent mb-2"
+          >
+            {stats[0].number}
+          </div>
+          <div
+            class="text-2xl font-semibold bg-gradient-to-r from-gray-50 to-gray-200 bg-clip-text text-transparent mb-2"
+          >
+            {stats[0].label}
+          </div>
+          <div class="flex items-center justify-center mx-auto mb-4 p-4">
+            <Icon
+              name={stats[0].icon}
+              size="150"
+              class="text-accent"
+            />
+          </div>
+          <p
+            class="text-xl font-bold bg-gradient-to-r from-gray-50/90 to-gray-200/90 bg-clip-text text-transparent text-pretty"
+          >
+            {stats[0].description}
+          </p>
+        </div>
+
+        <div
+          class="bg-gradient-to-r from-cyan-700 to-cyan-500 md:col-span-4 md:row-span-2 md:col-start-3 border rounded-xl h-full shadow-lg p-6 cursor-default hover:-translate-y-1 transition-transform duration-300 ease-out"
+        >
+          <div class="flex items-center justify-center mx-auto mb-4">
+            <div>
+              <div
+                class="text-3xl font-bold bg-gradient-to-r from-gray-50 to-gray-200 bg-clip-text text-transparent mb-2"
+              >
+                {stats[3].number}
+              </div>
+              <div
+                class="font-semibold text-2xl bg-gradient-to-r from-gray-50 to-gray-200 bg-clip-text text-transparent mb-2"
+              >
+                {stats[3].label}
+              </div>
+              <p
+                class="text-lg font-bold bg-gradient-to-r from-gray-50/80 to-gray-200/80 bg-clip-text text-transparent text-pretty"
+              >
+                {stats[3].description}
+              </p>
+            </div>
+            <Icon
+              name={stats[3].icon}
+              size="150"
+              class="text-accent"
+            />
+          </div>
+        </div>
+        <div
+          class="bg-gradient-to-r from-cyan-700 to-cyan-500 md:row-span-3 md:col-span-2 md:col-start-3 md:row-start-3 border rounded-xl h-full shadow-lg p-6 cursor-default hover:-translate-y-1 hover:transition-transform duration-300 ease-out"
+        >
+          <div
+            class="text-3xl font-bold bg-gradient-to-r from-gray-50 to-gray-200 bg-clip-text text-transparent mb-2"
+          >
+            {stats[2].number}
+          </div>
+          <div
+            class="text-2xl font-semibold mb-2 bg-gradient-to-r from-gray-50 to-gray-200 bg-clip-text text-transparent"
+          >
+            {stats[2].label}
+          </div>
+          <p
+            class="text-lg font-bold bg-gradient-to-r from-gray-50/80 to-gray-200/80 bg-clip-text text-transparent text-pretty"
+          >
+            {stats[2].description}
+          </p>
+          <div class="flex items-center justify-center mx-auto mb-4">
+            <Icon
+              name={stats[2].icon}
+              size="150"
+              class="text-accent"
+            />
+          </div>
+        </div>
+        <div
+          class="bg-gradient-to-r from-cyan-700 to-cyan-500 row-span-3 md:col-span-2 md:col-start-5 md:row-start-3 border rounded-xl h-full shadow-lg p-6 cursor-default hover:-translate-y-1 transition-transform duration-300 ease-out"
+        >
+          <div
+            class="text-3xl font-bold bg-gradient-to-r from-gray-50 to-gray-200 bg-clip-text text-transparent mb-2"
+          >
+            {stats[1].number}
+          </div>
+          <div
+            class="font-semibold text-2xl bg-gradient-to-r from-gray-50 to-gray-200 bg-clip-text text-transparent mb-2"
+          >
+            {stats[1].label}
+          </div>
+          <p
+            class="text-lg font-bold bg-gradient-to-r from-gray-50/80 to-gray-200/80 bg-clip-text text-transparent text-pretty"
+          >
+            {stats[1].description}
+          </p>
+          <div class="flex items-center justify-center mx-auto mb-4 pt-3">
+            <Icon
+              name={stats[1].icon}
+              size="150"
+              class="text-accent"
+            />
+          </div>
+        </div>
+      </MotionWrapper>
     </div>
   </div>
 </section>

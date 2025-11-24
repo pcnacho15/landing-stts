@@ -1,4 +1,6 @@
 ---
+import { MotionWrapper } from "./MotionWrapper";
+
 const partners = [
   { name: "Ecopetrol", logo: "/ecopetrol-logo.jpg" },
   { name: "Grupo Argos", logo: "/grupo-argos-logo.jpg" },
@@ -13,25 +15,40 @@ const partners = [
 
 <section class="py-16">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
+    <MotionWrapper
+      client:visible
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-12"
+    >
       <h2 class="text-3xl font-bold text-primary mb-4">
         Nuestros Aliados Estratégicos
       </h2>
-      <p class="text-muted-foreground max-w-2xl mx-auto">
+      <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
         Hemos trabajado con las empresas más importantes del sector industrial
         colombiano, brindando soluciones de SST de la más alta calidad.
       </p>
-    </div>
+    </MotionWrapper>
 
-    <div class="overflow-hidden max-w-5xl mx-auto">
-      <div class="flex whitespace-nowrap animate-infinite-scroll-left space-x-4">
+    <MotionWrapper
+      client:visible
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1, delay: 0.2 }}
+      className="overflow-hidden max-w-5xl mx-auto"
+    >
+      <div
+        class="flex whitespace-nowrap animate-infinite-scroll-left space-x-4"
+      >
         {/* Logos duplicados para crear efecto infinito */}
         {
           [...partners, ...partners].map((partner) => (
             <img
               src={partner.logo}
               alt={`Logo de ${partner.name}`}
-              class="h-24 w-auto mx-8 object-contain filter transition-all duration-300"
+              class="h-24 rounded w-auto mx-8 object-contain filter transition-all duration-300"
             />
           ))
         }
@@ -56,6 +73,6 @@ const partners = [
               )}
             </div> */
       }
-    </div>
+    </MotionWrapper>
   </div>
 </section>
